@@ -9,6 +9,12 @@ namespace SuperheroCreator.Controllers
 {
     public class PeopleController : Controller
     {
+        ApplicationDbContext db;
+
+        public PeopleController()
+        {
+            db = new ApplicationDbContext(); // Instantiating database
+        }
         // GET: People
         public ActionResult Index()
         {
@@ -35,7 +41,8 @@ namespace SuperheroCreator.Controllers
             try
             {
                 // TODO: Add insert logic here
-
+                db.People.Add(person); // Adds all columns under the People table
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -47,7 +54,7 @@ namespace SuperheroCreator.Controllers
         // GET: People/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(id);
         }
 
         // POST: People/Edit/5
@@ -69,17 +76,20 @@ namespace SuperheroCreator.Controllers
         // GET: People/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Person person = db.People.Where(p => p.Id == id).FirstOrDefault(); // Matching person's ID to parameter id
+            return View(person);
         }
 
         // POST: People/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Person person)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                person = db.People.Where(p => p.Id == id).FirstOrDefault();
+                db.People.Remove(person);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch

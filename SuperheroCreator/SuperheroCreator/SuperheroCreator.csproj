@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201911211728306_InitialMigration.Designer.cs">
       <DependentUpon>201911211728306_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911211922107_AddPersonVariables.cs" />
+    <Compile Include="Migrations\201911211922107_AddPersonVariables.Designer.cs">
+      <DependentUpon>201911211922107_AddPersonVariables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -243,6 +247,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\People\Create.cshtml" />
+    <Content Include="Views\People\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -263,6 +268,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911211728306_InitialMigration.resx">
       <DependentUpon>201911211728306_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911211922107_AddPersonVariables.resx">
+      <DependentUpon>201911211922107_AddPersonVariables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
