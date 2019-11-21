@@ -16,15 +16,16 @@ namespace SuperheroCreator.Controllers
             db = new ApplicationDbContext(); // Instantiating database
         }
         // GET: People
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             return View();
         }
 
         // GET: People/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int id, Person person)
         {
-            return View();
+            person = db.People.Where(p => p.Id == id).FirstOrDefault();
+            return View(person);
         }
 
         // GET: People/Create
@@ -54,17 +55,26 @@ namespace SuperheroCreator.Controllers
         // GET: People/Edit/5
         public ActionResult Edit(int id)
         {
-            return View(id);
+            Person person = db.People.Where(p => p.Id == id).FirstOrDefault(); // Matching person's ID to parameter id
+            return View(person);
         }
 
         // POST: People/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Person person)
         {
             try
             {
-                // TODO: Add update logic here
-
+                // Run through Table
+                Person personToEdit = db.People.Where(p => p.Id == id).FirstOrDefault();
+                // 
+                personToEdit.superHeroName = person.superHeroName;
+                personToEdit.firstName = person.firstName;
+                personToEdit.lastName = person.lastName;
+                personToEdit.primaryAbility = person.primaryAbility;
+                personToEdit.secondaryAbility = person.secondaryAbility;
+                personToEdit.catchPhrase = person.catchPhrase;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -86,7 +96,6 @@ namespace SuperheroCreator.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
                 person = db.People.Where(p => p.Id == id).FirstOrDefault();
                 db.People.Remove(person);
                 db.SaveChanges();
