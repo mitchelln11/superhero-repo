@@ -16,9 +16,12 @@ namespace SuperheroCreator.Controllers
             db = new ApplicationDbContext(); // Instantiating database
         }
         // GET: People
-        public ActionResult Index(int id)
+        public ActionResult Index()
         {
-            return View();
+            //IQueryable<Person> heros = db.People;
+            //var heros = db.People.ToList();
+            //var heros = db.People.Where(p => p.Id == id).FirstOrDefault();
+            return View("Index", db.People); // Trying to display the entire Person table
         }
 
         // GET: People/Details/5
