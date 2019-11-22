@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -182,6 +183,10 @@
     <Compile Include="Migrations\201911211922107_AddPersonVariables.Designer.cs">
       <DependentUpon>201911211922107_AddPersonVariables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911221557431_AddingHeroImage.cs" />
+    <Compile Include="Migrations\201911221557431_AddingHeroImage.Designer.cs">
+      <DependentUpon>201911221557431_AddingHeroImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -200,6 +205,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\batman.jpg" />
+    <Content Include="images\captain-america.jpg" />
+    <Content Include="images\the-hulk.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="libman.json" />
@@ -276,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911211922107_AddPersonVariables.resx">
       <DependentUpon>201911211922107_AddPersonVariables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911221557431_AddingHeroImage.resx">
+      <DependentUpon>201911221557431_AddingHeroImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -77,6 +77,7 @@ namespace SuperheroCreator.Controllers
                 personToEdit.primaryAbility = person.primaryAbility;
                 personToEdit.secondaryAbility = person.secondaryAbility;
                 personToEdit.catchPhrase = person.catchPhrase;
+                personToEdit.heroImage = person.heroImage;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -92,6 +93,22 @@ namespace SuperheroCreator.Controllers
             Person person = db.People.Where(p => p.Id == id).FirstOrDefault(); // Matching person's ID to parameter id
             return View(person);
         }
+
+        //// Image in database
+        //public ActionResult AddImage()
+        //{
+        //    ImgFormat img = new ImgFormat();
+        //    return View(img);
+        //}
+
+        //public ActionResult AddImage(ImgFormat imgFormat, HttpPostedFileBase heroImage)
+        //{
+        //    if (heroImage != null)
+        //    {
+        //        imgFormat.BrandImage = new byte[imgFormat.ContentLength];
+        //        heroImage.InputStream.Read(imgFormat.BrandImage, 0, heroImage.ContentLength);
+        //    }
+        //}
 
         // POST: People/Delete/5
         [HttpPost]

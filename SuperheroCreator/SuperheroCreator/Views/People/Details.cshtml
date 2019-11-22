@@ -8,56 +8,66 @@
 
 <div>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.superHeroName)
-        </dt>
+        @*
+        <div class="col-sm-6">
+        *@
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.superHeroName)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.superHeroName)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.superHeroName)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.firstName)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.firstName)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.firstName)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.firstName)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.lastName)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.lastName)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.lastName)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.lastName)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.primaryAbility)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.primaryAbility)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.primaryAbility)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.primaryAbility)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.secondaryAbility)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.secondaryAbility)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.secondaryAbility)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.secondaryAbility)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.catchPhrase)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.catchPhrase)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.catchPhrase)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.catchPhrase)
+                </dd>
 
-    </dl>
+            </dl>
+            @*
+        </div>
+        <div class="col-sm-6">
+            [Display]
+            @Html.DisplayFor(model => model.heroImage)
+        </div>
+    *@
 </div>
 <p>
     @Html.ActionLink("Back to List", "Index")

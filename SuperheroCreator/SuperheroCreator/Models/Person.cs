@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Windows.Controls;
 
 namespace SuperheroCreator.Models
 {
@@ -29,5 +30,7 @@ namespace SuperheroCreator.Models
 
         [DisplayName("Catch Phrase")]
         public string catchPhrase { get; set; }
+
+        public string heroImage { get; set; }
     }
 }
